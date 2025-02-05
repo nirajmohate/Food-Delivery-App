@@ -1,0 +1,5 @@
+dummy card no - 4000003560000008 (cart info)
+payment gateway - stripe 
+change order pages of stripe
+solve error of - stripe (payment)
+solve error of - verify import name  
