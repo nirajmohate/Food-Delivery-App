@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // placing user order from frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://localhost:5174";
+  const frontend_url = "http://localhost:5173";
 
   try {
     const newOrder = new orderModel({
@@ -53,19 +53,45 @@ const placeOrder = async (req, res) => {
   }
 };
 
+// const verifyOrder = async (req, res) => {
+//   const { orderId, success } = req.body;
+//   try {
+//     if (success === "true") {
+//       await orderModel.findByIdAndUpdate(orderId, { payment: true });
+//       res.json({ success: true, message: "Paid" });
+//     } else {
+//       await orderModel.findByIdAndDelete(orderId);
+//       res.json({ success: true, message: "Not Paid" });
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     res.json({ success: false, message: "Error" });
+//   }
+// };
+
 const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
+
   try {
-    if (success === "true") {
+    if (!orderId) {
+      return res.json({ success: false, message: "Invalid Order ID" });
+    }
+
+    const order = await orderModel.findById(orderId);
+    if (!order) {
+      return res.json({ success: false, message: "Order not found" });
+    }
+
+    if (success === true || success === "true") {
       await orderModel.findByIdAndUpdate(orderId, { payment: true });
-      res.json({ success: true, message: "Paid" });
+      return res.json({ success: true, message: "Paid" });
     } else {
       await orderModel.findByIdAndDelete(orderId);
-      res.json({ success: true, message: "Not Paid" });
+      return res.json({ success: true, message: "Not Paid" });
     }
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: "Error" });
+    console.error("Verification Error:", error);
+    res.json({ success: false, message: "Server Error" });
   }
 };
 

@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="" />
+          <h1>TastyTrack</h1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
             veritatis esse animi?
@@ -31,13 +31,13 @@ const Footer = () => {
             <h2>GET IN TOUCH</h2>
             <ul>
                 <li>+1-222-222-4444</li>
-                <li>contact@tomato.com</li>
+                <li>contact@#2E7D32.com</li>
 
             </ul>
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">Copyright 2025 @ Tomato.com - All Right Reserved</p>
+      <p className="footer-copyright">Copyright 2025 @ #2E7D32.com - All Right Reserved</p>
     </div>
   );
 };

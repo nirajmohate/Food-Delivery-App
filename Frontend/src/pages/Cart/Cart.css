@@ -58,7 +58,7 @@
 .cart-total button {
     color: white;
     border: none;
-    background-color: tomato;
+    background-color: #2E7D32;
     width: max(15vw, 200px);
     padding: 12px 0px;
     border-radius: 4px;

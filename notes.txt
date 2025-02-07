@@ -1,5 +1,8 @@
-dummy card no - 4000003560000008 (cart info)
+dummy card no - 4000003560000008 (cart info) 4000002500003155
 payment gateway - stripe 
 change order pages of stripe
 solve error of - stripe (payment)
 solve error of - verify import name  
+
+ mongodb+srv://nirajmohate:niraj123@cluster0.ieklk.mongodb.net/?
+ 

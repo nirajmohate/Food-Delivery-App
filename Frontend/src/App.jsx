@@ -10,6 +10,7 @@ import Verify from "./pages/Verification/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 
 
+
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false)
@@ -26,7 +27,9 @@ const App = () => {
           <Route path="/verify" element={<Verify/>}/>
           <Route path="/myorders" element={<MyOrders/>}/>
           
+          
         </Routes>
+        
       </div>
       <Footer />
     </>
